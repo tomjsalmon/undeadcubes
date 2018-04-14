@@ -1,0 +1,10 @@
+language: python
+python:
+  - "3.6"
+install:
+  - pip install -r build_requirements.txt
+  - pip install -r requirements.txt
+script:
+  - python -m unittest -q test_uc.py
+  - python -m mypy uc.py
+  - pylint --errors-only --rcfile pylint_config uc.py
