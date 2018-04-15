@@ -1,19 +1,21 @@
 language: python
 python:
-  - "3.6"
+- '3.6'
 install:
-  - pip install -r build_requirements.txt
-  - pip install -r requirements.txt
+- pip install -r build_requirements.txt
+- pip install -r requirements.txt
 script:
-  - python -m unittest test_uc.py
-  - python -m mypy uc.py
-  - pylint --rcfile .pylintrc uc.py
-  - ./.build-badges.sh
+- python -m unittest test_uc.py
+- python -m mypy uc.py
+- pylint --rcfile .pylintrc uc.py
+- "./.build-badges.sh"
 deploy:
   provider: gcs
-  access_key_id: "Travis"
-  secret_access_key: "AIzaSyD-TvRM8NKhilvBHZR10RgyArYnAAVFhN4"
+  access_key_id:
+    secure: "c6BKs7SG4LUwLvm4fWzYJrYwO3BTHLmpef+HzpF+4oOdkBwWXx7nWpSB+Voo6K7FgDjLvSPJ+LXxLLbGtSvxumMsxeDTXZnilcxlop00aRTaRmSa5LQevCkWy2FOkX4U/4Za84uOwiJIqhZXF095k38FR6kGetmGN4QyRsLoxi74j9sXbLh+sbunKOU3Bh6Dey6iS2izoLNXtB6onwRfLHne5phiGJZ25uh1YFXhw089xr2OzEhkG6u0mCiI0p6RiNLmAR+oF4dHv/aaesChl1b6IPU4CdKO6DCXioHcTTvUngX2pRHH9sUOUc6xzhZrAP6hPTZ44uSJuJtSEmimIh9kbITpSHgTGDIKH+iogrToDGxwRD1HBjWqzlZuNyHenpzULDzSGC60tCYIz4xq0cM8a+26tx6yXP4PSgEwjiY1Dy1+fnlCkYabuaGaAl4Mft7vPdJ4EGrMdmeMuTw/XmGnTbTK9ehvwp3aCpK9fkBHolXv3XoIXMhLHj3JhNXSx2sHy0EFm+LIlmDFy02eDHnLmothq0r40Xyj6y7mNoKDQCwwqvcY16o2gB4lSEMSXLO469s3Lf4WWbUV8/hpIh5jLsQr9523/+K20LHw7Pwd1MCclu6kuIRGumMbkIjANAsUgun8xDVPPWMdAEXYdWwD0EX0ANEows93vRQsxuw="
+  secret_access_key:
+    secure: "K2lYt/CVxrDM4TQN85noiDtK86FRuUxszc5A5QMWFlJxrAx0fmEwpyvEryYWcQtvuH+P7aOCYvkH/AcxACXY9kggdfLtKWxVHYwpRGX4u4xfQRo5YWyqfK2IrKwPV/0TRZcwuJJBirxYK9FMt7lRImiYFlSpsL2NZ+8jJpVrfzQHU+Zua7E8rtBB7oYHACl10IfxLtubv8b9ILGQLhMvIA00HFfAQFmywCrMPoZwM2uJ7aJ8WgFyDYdWzmxPA0ZLRYq6bM3K4mum/WZ5bUSKomuncVg6B8rNl+q/ZoZESqzfU55wLdlczavKqm/ckF8dFV04JyRM5Kl1NuQy6xFMhSG0XKbM9zCtrNpoxET9KeSUo/Xh61J61UpLXD0dBPJe2igvRFgTOZj4R1836hvOD//0PBEL7RKZ3j9iAYpbc+ROYBINGVAnrfDnJqL6Wx2++i6G0kuOdp/PNw3RW/yTroTDHC77eNpniHDVmsONvSvuCEIFg1/vBQwbM5ZqyrmqcpUeNaZaE2/mk/sQF5pZsrbqknGcmMUB3tYE7RPl4mVqerf1ZTEUdOjaoy5GV2TXh9xn4MYlSb9mifiUvASm0UVvyj9wuNGFj81UioQ2V4ODjQZlYsNqLz4NnHUstOf3xDTp0wH3NhHIqcMA4gn9evD+/A3FbLhDd4VPIRkEtXw="
   bucket: "undead-cubes-ci.storage.googleapis.com"
   skip_cleanup: true
   acl: public-read
-  local-dir: .badges
+  local-dir: ".badges"
