@@ -18,4 +18,4 @@ deploy:
   bucket: "undead-cubes-ci.storage.googleapis.com"
   skip_cleanup: true
   acl: public-read
-  local-dir: ".badges"
+  local-dir: .badges
