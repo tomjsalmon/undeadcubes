@@ -15,4 +15,4 @@ python3 -m mypy uc.py
 
 # Linting
 echo Linting ...........................
-pylint --errors-only --rcfile pylint_config uc.py
+pylint --errors-only --rcfile .pylintrc uc.py
