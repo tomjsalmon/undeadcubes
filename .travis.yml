@@ -17,5 +17,6 @@ deploy:
   bucket: undead-cubes-ci
   local-dir: ".badges"
   skip_cleanup: true
+  acl: public-read
   on:
     repo: tomjsalmon/undeadcubes
