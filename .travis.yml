@@ -7,4 +7,13 @@ install:
 script:
   - python -m unittest test_uc.py
   - python -m mypy uc.py
-  - pylint --rcfile pylint_config uc.py
+  - pylint --rcfile .pylintrc uc.py
+  - ./.build-badges.sh
+deploy:
+  provider: gcs
+  access_key_id: "Travis"
+  secret_access_key: "AIzaSyD-TvRM8NKhilvBHZR10RgyArYnAAVFhN4"
+  bucket: "undead-cubes-ci.storage.googleapis.com"
+  skip_cleanup: true
+  acl: public-read
+  local-dir: .badges
